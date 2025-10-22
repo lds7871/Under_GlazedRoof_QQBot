@@ -1,6 +1,16 @@
-# 🤖 QQ 机器人项目 (QQR)
+# 🤖 QQ 机器人项目 (Under_GlazedRoof_QQBot)
+<div align="center">
 
-基于 **SpringBoot** + **Node.js** + **Websocket** 的 QQ 官方 Bot API v2 实现
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Java](https://img.shields.io/badge/Java-17+-brightgreen.svg)
+![Spring Boot](https://img.shields.io/badge/SpringBoot-3.1.4-brightgreen.svg)
+![Node.js](https://img.shields.io/badge/Node.js-16+-brightgreen.svg)
+![Status](https://img.shields.io/badge/Status-Active-success.svg)
+
+一个功能完整的 QQ 机器人解决方案，基于 **SpringBoot** + **Node.js** + **Websocket** 的 QQ 官方 Bot API v2 实现。
+
+</div>
+
 ## 前言：
 - **此项目发出来估计就不再会更新了，是从私有库改过来的已经更新不少次了，QQ官机和频道功能两年里一直在砍，QQ开放平台文档本来就烂还两年多不更新，哪些弃用了也不明确。越写越伤心**
 - **即使如此你想快速开发仅有文字返回的指令或是熟悉技术，这个项目还是可用。**
@@ -9,6 +19,40 @@
 - **但只要是任何别的返回格式（Markdown/Ark/Media），QQ都会有及其严格的使用限制和极慢的审核速度等着你。**
 
 ---
+---
+
+## ✨ 项目特性
+
+### 🏗️ 架构设计
+- **混合架构** - Spring Boot 处理业务逻辑，Node.js 管理 WebSocket 连接
+- **模块化设计** - 清晰的代码结构，易于维护和扩展
+- **解耦通信** - HTTP 通信实现服务间的完全解耦
+
+### 🌐 通信支持
+- **频道消息** - 支持 `AT_MESSAGE_CREATE` 频道内 @ 消息
+- **群聊消息** - 支持 `GROUP_AT_MESSAGE_CREATE` 群聊 @ 消息
+- **私聊消息** - 支持 `C2C_MESSAGE_CREATE` 和 `DIRECT_MESSAGE_CREATE` 私聊
+- **实时处理** - WebSocket 长连接实时接收消息
+
+### 🤖 指令系统
+- **模板内置指令** - `/debug`, `/echo`, `/help` 等
+- **灵活的扩展机制** - 轻松添加自定义指令
+- **自动指令发现** - 基于注解的指令注册系统
+- **完整的指令处理流程** - 从消息解析到回复发送
+
+### 🛡️ 安全可靠
+- **沙箱环境支持** - 内置沙箱模式，安全测试机器人功能
+- **自动 Token 刷新** - 无需手动管理 AccessToken
+- **心跳维护** - 自动保持 WebSocket 长连接
+- **异常捕获处理** - 完善的错误处理机制
+
+### 🔧 开发友好
+- **无第三方 SDK** - 直接调用官方 API，代码透明
+- **详细日志** - 彩色表情符号日志，易于调试
+- **本地开发工具** - 内置启动脚本，开箱即用
+
+---
+
 
 ## 📋 目录
 1. [现有指令](#1-现有指令)
@@ -19,6 +63,7 @@
 6. [技术栈](#6-技术栈)
 
 ---
+
 
 ## 1. 现有指令
 
