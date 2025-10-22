@@ -1,0 +1,46 @@
+{
+  "name": "qq-robot-project",
+  "version": "1.0.0",
+  "description": "QQ机器人项目，基于SpringBoot + Node.js，使用QQ官方Bot API v2",
+  "main": "nodejs/qq-bot-service.js",
+  "scripts": {
+    "install-deps": "npm install",
+    "start": "concurrently \"npm run start:java\" \"npm run start:node\"",
+    "start:java": "mvn spring-boot:run",
+    "start:node": "node nodejs/qq-bot-service.js",
+    "build": "mvn clean package",
+    "dev": "concurrently \"npm run dev:java\" \"npm run dev:node\"",
+    "dev:java": "mvn spring-boot:run -Dspring-boot.run.profiles=dev",
+    "dev:node": "nodemon nodejs/qq-bot-service.js",
+    "test": "mvn test",
+    "clean": "mvn clean",
+    "setup": "npm install && mvn clean compile"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.6.1",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "qq-bot",
+    "robot",
+    "springboot",
+    "nodejs",
+    "tencent",
+    "qq"
+  ],
+  "author": "QQ Robot Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/qq-robot-project.git"
+  }
+}

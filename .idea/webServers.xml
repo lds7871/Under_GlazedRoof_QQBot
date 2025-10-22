@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9a6c443b-f63c-4977-b39f-f5c16a0e7f81" name="火山云服" url="https://115.190.170.56/root">
+        <fileTransfer rootFolder="/root" accessType="SFTP" host="115.190.170.56" port="22" sshConfigId="20b0d001-d72f-456c-ace1-59c34e71ea65" sshConfig="root@115.190.170.56:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseRsync="true" isUseSudo="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,89 @@
+# QQ机器人SpringBoot应用配置
+server:
+  port: 8070
+  servlet:
+    context-path: /
+
+  # JSON配置
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  
+  # 日志配置
+  output:
+    ansi:
+      enabled: always
+
+# QQ机器人配置
+qq:
+  bot:
+    # 机器人应用ID (请在QQ开放平台获取)
+    app-id: 你的信息
+    
+    # 机器人Token (请在QQ开放平台获取)
+    token: 你的信息
+    
+    # 机器人私钥 (用于签名验证)
+    secret: 你的信息
+    
+    # 是否为沙箱环境
+    sandbox: true
+    
+    # API基础URL (会根据sandbox自动设置)
+    api-base-url: ${QQ_BOT_API_URL:}
+    
+    # WebSocket网关URL (会根据sandbox自动设置)
+    ws-url: ${QQ_BOT_WS_URL:}
+    
+    # 消息回调验证Token
+    verify-token: ${QQ_BOT_VERIFY_TOKEN:your_verify_token}
+    
+    # 加密密钥
+    encrypt-key: ${QQ_BOT_ENCRYPT_KEY:your_encrypt_key}
+
+# 日志配置
+logging:
+  level:
+    org.example: DEBUG
+    org.springframework.web: DEBUG
+    root: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# 数据库配置
+spring:
+  application:
+    name: qq-robot-service
+  datasource:
+    url:  jdbc:mysql://你的地址/你的信息?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
+    username: 你的信息
+    password: 你的信息
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate:
+        format_sql: true
+
+# 管理端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+  endpoint:
+    health:
+      show-details: always
+
+# 应用信息
+info:
+  app:
+    name: QQ Robot Service
+    description: QQ机器人服务，基于SpringBoot和腾讯官方Node.js SDK
+    version: 1.0.0
+    author: QQ Robot Team
