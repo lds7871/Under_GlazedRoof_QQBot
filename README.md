@@ -10,7 +10,7 @@
 一个功能完整的 QQ 机器人解决方案，基于 **SpringBoot** + **Node.js** + **Websocket** 的 QQ 官方 Bot API v2 实现。
 
 </div>
-注：一个基于NapCat框架的Spring服务QQBot正在开发测试阶段，目前正在几个群聊内使用。等到想实现的功能基本完善后也会单独分离出来。
+注：本人还有另一个野机Bot项目，功能更加自由[基于OneBot协议和NapcatQQ框架开发的的QQBot](https://github.com/lds7871/GlazedTile_QQBot)。
 
 ## 前言：
 - **此项目发出来估计就不再会更新了，是从私有库改过来的已经更新不少次了，QQ官机和频道功能两年里一直在砍，QQ开放平台文档本来就烂还两年多不更新，哪些弃用了也不明确。越写越伤心**
